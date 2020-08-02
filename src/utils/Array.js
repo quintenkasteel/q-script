@@ -52,9 +52,6 @@ export const flattenDeep = (arr) => {
   return arr.flat(Infinity);
 };
 
-export const pair = (arr) => {
-  return Object.fromEntries(arr);
-};
 
 export const head = (arr) => {
   const [head, ...tail] = arr;
@@ -98,4 +95,47 @@ export const keyBy = (arr, key) => {
     (array || []).reduce((r, x) => ({ ...r, [k ? x[k] : x]: x }), {});
 
   return arr.isArray ? keyBy(arr, key) : Object.values(keyBy(arr, key));
+};
+
+const makeSelect = (comparator) => (a, b) => (comparator(a, b) ? a : b);
+
+export const minBy = (arr, by) => {
+  const minByValue = makeSelect((a, b) => a[by] <= b[by]);
+  return arr.reduce(minByValue, {});
+};
+
+export const maxBy = (arr, by) => {
+  const maxByValue = makeSelect((a, b) => a[by] >= b[by]);
+  return arr.reduce(maxByValue, {});
+};
+
+export const pluck = (arr, val) => {
+  var values = arr.map(function (x) {
+    return x[val];
+  });
+  return values;
+};
+
+export const sample = (arr) => {
+  const len = arr == null ? 0 : arr.length;
+  return len ? arr[Math.floor(Math.random() * len)] : undefined;
+};
+
+export const size = (arr) => {
+  if (arr.isArray) return arr.length;
+  return Object.keys(arr).length;
+};
+
+export const sortBy = (arr, key, type) => {
+  const ascOrDec = (num) => (type === "dec" ? num * -1 : num);
+  const sorting = arr
+    .concat()
+    .sort((a, b) =>
+      a[key] > b[key] ? ascOrDec(1) : b[key] > a[key] ? ascOrDec(-1) : 0
+    );
+  return sorting;
+};
+
+export const unique = (arr) => {
+  return [...new Set(arr)];
 };

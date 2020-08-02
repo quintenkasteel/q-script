@@ -1,4 +1,4 @@
-import addCssReturnClass from "./ParseCss.js";
+import addCssReturnClass from "./ParseCSS.js";
 
 const createFunction = (collection) => {
   // each function

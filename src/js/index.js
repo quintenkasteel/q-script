@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import q from "./js/Q.js";
-import style from "./js/Style.js";
-import _ from "./js/utils/Underscore.js";
+import q from "./Q.js";
+import style from "./Style.js";
+import _ from "./utils/Underscore.js";
 
 const App = () => {
   console.log("difference 1,2,4], [2,3,5]", _.difference([1, 2, 4], [2, 3, 5]));
@@ -190,11 +190,5 @@ const App = () => {
 
 export default App;
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('react-container') // eslint-disable-line no-undef
-)
-
-if(module.hot) // eslint-disable-line no-undef  
-  module.hot.accept() // eslint-disable-line no-undef  
-
+const wrapper = document.getElementById("container");
+ReactDOM.render(<App />, wrapper);

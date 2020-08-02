@@ -52,13 +52,14 @@ export const flattenDeep = (arr) => {
   return arr.flat(Infinity);
 };
 
-
 export const head = (arr) => {
+  // eslint-disable-next-line no-unused-vars
   const [head, ...tail] = arr;
   return head;
 };
 
 export const tail = (arr) => {
+  // eslint-disable-next-line no-unused-vars
   const [head, ...tail] = arr;
   return tail;
 };

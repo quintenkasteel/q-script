@@ -1,4 +1,6 @@
+// eslint-disable-next-line
 const styleEl = document.createElement("style");
+// eslint-disable-next-line
 document.head.appendChild(styleEl);
 const sheet = styleEl.sheet;
 
@@ -38,12 +40,11 @@ function addCssReturnClass(strings, ...interpolations) {
     const and = styleString.split("&");
     and.shift();
 
-      const pseudoStringClean = pseudoString;
+      const pseudoStringClean = and ;
 
       pseudoStringClean.forEach((element) => {
       const rule = `.${className}${element}`;
       sheet.insertRule(rule, index);
-      console.log("e", rule);
     });
   }
 

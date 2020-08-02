@@ -138,5 +138,6 @@ export const sortBy = (arr, key, type) => {
 };
 
 export const unique = (arr) => {
+  // eslint-disable-next-line
   return [...new Set(arr)];
 };

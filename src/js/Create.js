@@ -67,6 +67,7 @@ const createFunction = (collection) => {
     collection.getOuterHeight = (withMargin) => {
       var height = element.offsetHeight;
       if (withMargin) {
+        // eslint-disable-next-line
         var style = getComputedStyle(element);
         height += parseInt(style.marginTop) + parseInt(style.marginBottom);
       }
@@ -76,6 +77,7 @@ const createFunction = (collection) => {
     collection.getOuterWidth = (withMargin) => {
       var width = element.offsetWidth;
       if (withMargin) {
+        // eslint-disable-next-line
         var style = getComputedStyle(element);
         width += parseInt(style.marginLeft) + parseInt(style.marginRight);
       }
@@ -86,5 +88,3 @@ const createFunction = (collection) => {
 };
 
 export default createFunction;
-
-

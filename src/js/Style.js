@@ -1,6 +1,6 @@
 
 import addCssReturnClass from './ParseCSS.js';
-
+// eslint-disable-next-line
 var element = document.createElement("div");
 var styled = {};
 

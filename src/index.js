@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+/* eslint-disable */
+import React from "react";
 import ReactDOM from "react-dom";
 import q from "./js/Q.js";
 import style from "./js/Style.js";

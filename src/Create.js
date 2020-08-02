@@ -55,29 +55,36 @@ const createFunction = (collection) => {
     return collection;
   };
 
-  collection.outerHeight = (withMargin) => {
-    collection.forEach((element) => {
+  collection.append = (element) => {
+    collection.forEach((parent) => {
+      parent.appendChild(element);
+    });
+    return collection;
+  };
+
+  // non chainable functions they return something
+  collection.forEach((element) => {
+    collection.getOuterHeight = (withMargin) => {
       var height = element.offsetHeight;
       if (withMargin) {
         var style = getComputedStyle(element);
         height += parseInt(style.marginTop) + parseInt(style.marginBottom);
       }
       return height;
-    });
-    return collection;
-  };
+    };
 
-  collection.outerWidth = (withMargin) => {
-    collection.forEach((element) => {
+    collection.getOuterWidth = (withMargin) => {
       var width = element.offsetWidth;
       if (withMargin) {
         var style = getComputedStyle(element);
         width += parseInt(style.marginLeft) + parseInt(style.marginRight);
       }
       return width;
-    });
+    };
     return collection;
-  };
+  });
 };
 
 export default createFunction;
+
+

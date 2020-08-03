@@ -1,14 +1,18 @@
 
-import addCssReturnClass from './ParseCSS.js';
-// eslint-disable-next-line
-var element = document.createElement("div");
-var styled = {};
+/* eslint-disable */
 
-styled.div = (args) => {
-  
-  element.classList.add(addCssReturnClass(args));
-  return element
+import addCssReturnClass from './ParseCSS.js';
+import React from 'react'
+
+var css = {};
+
+css = (style) => {
+  // eslint-disable-next-line
+  // var element = document.createElement("div");
+  // element.classList.add();
+  return addCssReturnClass(style)
 };
 
-export default styled
+export default css
+
 

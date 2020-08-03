@@ -1,7 +1,8 @@
+/* eslint-disable */
 import React from "react";
 import ReactDOM from "react-dom";
 import q from "./Q.js";
-import style from "./Style.js";
+import css from "./Style.js";
 import _ from "./utils/Underscore.js";
 
 const App = () => {
@@ -146,9 +147,11 @@ const App = () => {
   console.log("randomInt", _.randomInt(1, 5));
   console.log("randomFloat", _.randomInt(1, 5, true));
 
-  const styledDiv = style.div`
+  const styledDiv = css`
     color: black;
   `;
+
+  console.log(styledDiv)
 
   const styled = `
   color: red;
@@ -159,9 +162,6 @@ const App = () => {
   q(() => {
     q("h1").css`color: red;`;
     q("h1").addClass("yes");
-
-    q(".class").append(styledDiv);
-    q(styledDiv).append(document.createElement("p"));
 
     q("h1").on("click", () => {
       alert("WOUW");
@@ -190,5 +190,5 @@ const App = () => {
 
 export default App;
 
-const wrapper = document.getElementById("container");
+const wrapper = document.getElementById("root");
 ReactDOM.render(<App />, wrapper);

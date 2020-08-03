@@ -6,7 +6,7 @@ const BrotliPlugin = require("brotli-webpack-plugin");
 
 module.exports = {
   entry: {
-    main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/index.js']
+    main: ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './src/js/index.js']
   },
   output: {
     path: path.join(__dirname, 'dist'),

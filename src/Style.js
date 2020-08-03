@@ -2,7 +2,6 @@
 /* eslint-disable */
 
 import addCssReturnClass from './ParseCSS.js';
-import React from 'react'
 
 var css = {};
 

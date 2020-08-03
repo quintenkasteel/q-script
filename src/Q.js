@@ -1,4 +1,5 @@
 import createFunction from "./Create.js";
+
 const q = (...args) => {
   if (typeof args[0] === "function") {
     // document ready listener

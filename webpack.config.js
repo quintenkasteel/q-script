@@ -5,7 +5,7 @@ const ROOT = path.resolve( __dirname, 'src' );
 const DESTINATION = path.resolve( __dirname, 'dist' );
 
 module.exports = {
-  target: "web",  
+  target: "es5",  
   context: ROOT,
     entry: {
         'main': './index.js'
@@ -13,38 +13,21 @@ module.exports = {
     output: {
       filename: 'index.js',
       path: path.resolve(__dirname, 'dist'),
-      library: "Qutil",
-      libraryTarget: "umd",
+      library: "@quintenkasteel/q-script",
       globalObject: "this",
       umdNamedDefine: true,
+      libraryTarget: 'commonjs2',
     },
     resolve: {
         extensions: ['.ts', '.js'],
-        modules: [
-            ROOT,
-            'node_modules'
-        ]
     },
     module: {
         rules: [
-            /****************
-            * PRE-LOADERS
-            *****************/
             {
-                enforce: 'pre',
-                test: /\.js$/,
-                use: 'source-map-loader'
+              test: /\.js?$/,
+              exclude: /(node_modules)/,
+              use: 'babel-loader',
             },
-            {
-                enforce: 'pre',
-                test: /\.ts$/,
-                exclude: /node_modules/,
-                use: 'tslint-loader'
-            },
-
-            /****************
-            * LOADERS
-            *****************/
             {
                 test: /\.ts$/,
                 exclude: [ /node_modules/ ],

@@ -1,7 +1,7 @@
 /* eslint-disable */
-import { q } from "../index.js";
-import css from "../src/Style.js";
-import _ from "../src/utils/Underscore.js";
+import { q } from "../src/index.js";
+import { css } from "../src/index.js";
+import _ from "../src/index.js";
 
 console.log("difference 1,2,4], [2,3,5]", _.difference([1, 2, 4], [2, 3, 5]));
 console.log("chunk ['a', 'b', 'c', 'd'], 2", _.chunk(["a", "b", "c", "d"], 2));
@@ -137,6 +137,7 @@ console.log("randomFloat", _.randomInt(1, 5, true));
 
 const styledDiv = css`
   color: black;
+  background: blue;
 `;
 
 console.log(styledDiv);

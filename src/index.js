@@ -24,8 +24,8 @@ import {
   size,
   sortBy,
   unique,
-} from "./src/utils/Array.js";
-import { isFunction, isEmpty } from "./src/utils/Types.js";
+} from "./utils/Array.js";
+import { isFunction, isEmpty } from "./utils/Types.js";
 import {
   has,
   get,
@@ -35,13 +35,15 @@ import {
   fromPair,
   toPair,
   values,
-} from "./src/utils/Object.js";
-import { inRange, randomInt } from "./src/utils/Utils.js";
-import _ from "./src/utils/Underscore.js";
-import q from "./src/Q.js";
+} from "./utils/Object.js";
+import { inRange, randomInt } from "./utils/Utils.js";
+import _ from "./utils/Underscore.js";
+import q from "./Q.js";
+import { css } from "./Style.js";
 export default _;
-export { q };
 export {
+  q,
+  css,
   difference,
   chunk,
   compact,

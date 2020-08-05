@@ -1,8 +1,8 @@
 {
   "name": "@quintenkasteel/q-script",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "description": "utility functions",
-  "main": "index.js",
+  "main": "src/index.js",
   "author": "Quinten Kasteel",
   "license": "ISC",
   "scripts": {
@@ -14,7 +14,8 @@
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "build.esnext": "npm run build:types && npm run build:js",
     "build.all": "npm run build.prod && npm run build.esnext",
-    "test": "karma start karma.config.js"
+    "test": "karma start karma.config.js",
+    "dev": "webpack"
   },
   "repository": "https://github.com/quintenkasteel/q-script",
   "keywords": [],

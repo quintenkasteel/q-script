@@ -5,17 +5,19 @@ const ROOT = path.resolve( __dirname, 'src' );
 const DESTINATION = path.resolve( __dirname, 'dist' );
 
 module.exports = {
-    context: ROOT,
-
+  target: "web",  
+  context: ROOT,
     entry: {
-        'main': '../index.js'
+        'main': './index.js'
     },
-    
     output: {
-        filename: '[name].bundle.js',
-        path: DESTINATION
+      filename: 'index.js',
+      path: path.resolve(__dirname, 'dist'),
+      library: "Qutil",
+      libraryTarget: "umd",
+      globalObject: "this",
+      umdNamedDefine: true,
     },
-
     resolve: {
         extensions: ['.ts', '.js'],
         modules: [
@@ -23,7 +25,6 @@ module.exports = {
             'node_modules'
         ]
     },
-
     module: {
         rules: [
             /****************
@@ -53,5 +54,10 @@ module.exports = {
     },
 
     devtool: 'cheap-module-source-map',
-    devServer: {}
+    devServer: {
+      contentBase: path.resolve(__dirname, 'dist'),
+      hot: true,
+      port: 9000,
+      historyApiFallback: true
+    },
 };

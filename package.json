@@ -2,7 +2,7 @@
   "name": "@quintenkasteel/q-script",
   "version": "0.1.5",
   "description": "utility functions",
-  "main": "lib/index.js",
+  "main": "dist/index.js",
   "author": "Quinten Kasteel",
   "license": "ISC",
   "scripts": {

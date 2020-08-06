@@ -89,7 +89,7 @@ module.exports = {
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "lib"),
+    path: path.resolve(__dirname, "dist"),
     library: "@quintenkasteel/q-script",
     globalObject: "this",
     umdNamedDefine: true,
@@ -129,7 +129,7 @@ module.exports = {
   ],
   devtool: "cheap-module-source-map",
   devServer: {
-    contentBase: path.resolve(__dirname, "lib"),
+    contentBase: path.resolve(__dirname, "dist"),
     hot: true,
     port: 9000,
   },

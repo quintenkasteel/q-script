@@ -45,7 +45,7 @@ import uuid from "./other/Uuid.js";
 import DOM from "./DOM/DOM.js";
 
 var q = (function () {
-  // "use strict";
+  "use strict";
 
   // Create the methods object
   var methods = {};

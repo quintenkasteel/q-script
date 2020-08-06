@@ -1,3 +1,1 @@
-## Installation
-
-    qscript util functions
+Work in progress: simple utility library 

@@ -1,4 +1,4 @@
-const day = ( string, from="month") => {
+const day = (string, from="month") => {
   if (from === "week") {
     if (!string) {
       return new Date().getDay();

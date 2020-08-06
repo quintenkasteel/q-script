@@ -52,6 +52,24 @@ import isLeapYear from "./time/display/IsLeapYear.js";
 
 import daysInMonth from "./time/get-set/DaysInMonth.js";
 import day from "./time/get-set/Day.js";
+import hour from "./time/get-set/Hours.js";
+import maxDate from "./time/get-set/MaxDate.js";
+import milliseconds from "./time/get-set/MilliSeconds.js";
+import minDate from "./time/get-set/MinDate.js";
+import minutes from "./time/get-set/Minutes.js";
+import seconds from "./time/get-set/Seconds.js";
+import setDay from "./time/get-set/SetDay.js";
+import setHours from "./time/get-set/SetHours.js";
+import setMilliseconds from "./time/get-set/SetMilliseconds.js";
+import setMinutes from "./time/get-set/SetMinutes.js";
+import setSeconds from "./time/get-set/SetSeconds.js";
+import week from "./time/get-set/Week.js";
+
+import addTime from "./time/manipulate/Add.js";
+import subtractTime from "./time/manipulate/Subtract.js";
+
+import stringDateFormat from "./time/parse/StringDateFormat.js";
+import stringTimeFormat from "./time/parse/StringTimeFormat.js";
 
 var q = (function () {
   "use strict";
@@ -252,6 +270,10 @@ var q = (function () {
     return day(from, date);
   };
 
+  methods.daysInMonth = (y, m) => {
+    return daysInMonth(y, m);
+  };
+
   methods.hour = () => {
     return hour();
   };
@@ -298,6 +320,22 @@ var q = (function () {
 
   methods.week = (d, type) => {
     return week(d, type);
+  };
+
+  methods.addTime = (d) => {
+    return addTime(d);
+  };
+
+  methods.subtractTime = (d) => {
+    return subtractTime(d);
+  };
+
+  methods.stringDateFormat = (d) => {
+    return stringDateFormat(d);
+  };
+
+  methods.stringTimeFormat = () => {
+    return stringTimeFormat();
   };
 
   // Expose the public methods

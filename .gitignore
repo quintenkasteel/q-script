@@ -3,7 +3,7 @@ node_modules
 .DS_Store
 src/**/*.js.map
 typings
-dist
+lib
 Coverage
 coverage
 ts-out

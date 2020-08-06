@@ -132,6 +132,8 @@ console.log(
 console.log("inRange 3, 2, 1", q.inRange(3, 1, 5));
 console.log("randomInt", q.randomInt(1, 5));
 console.log("randomFloat", q.randomInt(1, 5, true));
+const day = new Date(2012, 2, 0).getDate()
+console.log("day of month", day);
 
 const styled = `
   color: red;

@@ -1,6 +1,6 @@
 {
   "name": "@quintenkasteel/q-script",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "utility functions",
   "main": "dist/index.js",
   "author": "Quinten Kasteel",
@@ -14,7 +14,8 @@
     "build.esnext": "npm run build:types && npm run build:js",
     "build.all": "npm run build.prod && npm run build.esnext",
     "test": "karma start karma.config.js",
-    "dev": "webpack",
+    "dev": "webpack --config webpack.config.js",
+    "webpack": "webpack",
     "start": "webpack-dev-server --mode development --open"
   },
   "repository": "https://github.com/quintenkasteel/q-script",
@@ -39,6 +40,7 @@
     "@types/node": "7.0.0",
     "awesome-typescript-loader": "5.2.0",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
     "eslint": "^5.16.0",
     "html-webpack-plugin": "^4.3.0",
     "jasmine-core": "3.1.0",

@@ -1,5 +1,4 @@
 /* eslint-disable */
-import { css } from "../src/index.js";
 import q from "../src/index.js";
 
 console.log("difference 1,2,4], [2,3,5]", q.difference([1, 2, 4], [2, 3, 5]));
@@ -134,20 +133,11 @@ console.log("inRange 3, 2, 1", q.inRange(3, 1, 5));
 console.log("randomInt", q.randomInt(1, 5));
 console.log("randomFloat", q.randomInt(1, 5, true));
 
-const styledDiv = css`
-  color: black;
-  background: blue;
-`;
-
-console.log(styledDiv);
-
 const styled = `
   color: red;
   font-weight: bold;
   position: relative;
 `;
-
-console.log(q.DOM("h1").addClass("no"));
 
 q.DOM(() => {
   q.DOM("h1").css`color: red;`;

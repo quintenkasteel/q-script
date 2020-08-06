@@ -28,12 +28,12 @@ import isFunction from "./types/IsFunction.js";
 import isEmpty from "./types/IsEmpty.js";
 import isString from "./types/IsString.js";
 
-import  has from "./object/Has.js";
-import  get from "./object/Get.js";
-import  keys from "./object/Keys.js";
-import  pick from "./object/Pick.js";
-import  pickBy from "./object/PickBy.js";
-import  fromPair from "./object/FromPair.js";
+import has from "./object/Has.js";
+import get from "./object/Get.js";
+import keys from "./object/Keys.js";
+import pick from "./object/Pick.js";
+import pickBy from "./object/PickBy.js";
+import fromPair from "./object/FromPair.js";
 import toPair from "./object/ToPair.js";
 import values from "./object/Values.js";
 
@@ -44,19 +44,47 @@ import uuid from "./other/Uuid.js";
 
 import DOM from "./DOM/DOM.js";
 
+import timeDifference from "./time/display/TimeDifference.js";
+import isBefore from "./time/display/IsBefore.js";
+import isAfter from "./time/display/IsAfter.js";
+import isSame from "./time/display/IsSame.js";
+import isLeapYear from "./time/display/IsLeapYear.js";
+
+import daysInMonth from "./time/get-set/DaysInMonth.js";
+import day from "./time/get-set/Day.js";
+import hour from "./time/get-set/Hours.js";
+import maxDate from "./time/get-set/MaxDate.js";
+import milliseconds from "./time/get-set/MilliSeconds.js";
+import minDate from "./time/get-set/MinDate.js";
+import minutes from "./time/get-set/Minutes.js";
+import seconds from "./time/get-set/Seconds.js";
+import setDay from "./time/get-set/SetDay.js";
+import setHours from "./time/get-set/SetHours.js";
+import setMilliseconds from "./time/get-set/SetMilliseconds.js";
+import setMinutes from "./time/get-set/SetMinutes.js";
+import setSeconds from "./time/get-set/SetSeconds.js";
+import week from "./time/get-set/Week.js";
+
+import addTime from "./time/manipulate/Add.js";
+import subtractTime from "./time/manipulate/Subtract.js";
+
+import stringDateFormat from "./time/parse/StringDateFormat.js";
+import stringTimeFormat from "./time/parse/StringTimeFormat.js";
+
 var q = (function () {
   "use strict";
 
   // Create the methods object
   var methods = {};
 
+  //DOM
+  methods.DOM = (...args) => {
+    return DOM(...args);
+  };
+
   //Array
   methods.difference = (a, b) => {
     return difference(a, b);
-  };
-
-  methods.DOM = (...args) => {
-    return DOM(...args);
   };
 
   methods.chunk = (input, size) => {
@@ -215,6 +243,99 @@ var q = (function () {
 
   methods.uuid = () => {
     return uuid();
+  };
+
+  // time
+  methods.timeDifference = (firstDate, secondDate) => {
+    return timeDifference(firstDate, secondDate);
+  };
+
+  methods.isAfter = (firstDate, secondDate) => {
+    return isAfter(firstDate, secondDate);
+  };
+
+  methods.isBefore = (firstDate, secondDate) => {
+    return isBefore(firstDate, secondDate);
+  };
+
+  methods.isSame = (firstDate, secondDate) => {
+    return isSame(firstDate, secondDate);
+  };
+
+  methods.isLeapYear = (year) => {
+    return isLeapYear(year);
+  };
+
+  methods.day = (from, date) => {
+    return day(from, date);
+  };
+
+  methods.daysInMonth = (y, m) => {
+    return daysInMonth(y, m);
+  };
+
+  methods.hour = () => {
+    return hour();
+  };
+
+  methods.maxDate = (array) => {
+    return maxDate(array);
+  };
+
+  methods.milliseconds = () => {
+    return milliseconds();
+  };
+
+  methods.minDate = (array) => {
+    return minDate(array);
+  };
+
+  methods.minutes = () => {
+    return minutes();
+  };
+
+  methods.seconds = () => {
+    return seconds();
+  };
+
+  methods.setDay = (d) => {
+    return setDay(d);
+  };
+
+  methods.setHours = (h) => {
+    return setHours(h);
+  };
+
+  methods.setMilliseconds = (ms) => {
+    return setMilliseconds(ms);
+  };
+
+  methods.setMinutes = (m) => {
+    return setMinutes(m);
+  };
+
+  methods.setSeconds = (s) => {
+    return setSeconds(s);
+  };
+
+  methods.week = (d, type) => {
+    return week(d, type);
+  };
+
+  methods.addTime = (d) => {
+    return addTime(d);
+  };
+
+  methods.subtractTime = (d) => {
+    return subtractTime(d);
+  };
+
+  methods.stringDateFormat = (d) => {
+    return stringDateFormat(d);
+  };
+
+  methods.stringTimeFormat = () => {
+    return stringTimeFormat();
   };
 
   // Expose the public methods

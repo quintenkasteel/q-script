@@ -1,3 +1,3 @@
-const extractDate = string => (([year, day, month]) => ({ day, month, year }))(string.split('-'));
+const extractDate = string => (([year, month, day]) => ({ year, month, day }))(string.split('-'));
 
 export default extractDate

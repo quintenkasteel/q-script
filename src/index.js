@@ -28,12 +28,12 @@ import isFunction from "./types/IsFunction.js";
 import isEmpty from "./types/IsEmpty.js";
 import isString from "./types/IsString.js";
 
-import  has from "./object/Has.js";
-import  get from "./object/Get.js";
-import  keys from "./object/Keys.js";
-import  pick from "./object/Pick.js";
-import  pickBy from "./object/PickBy.js";
-import  fromPair from "./object/FromPair.js";
+import has from "./object/Has.js";
+import get from "./object/Get.js";
+import keys from "./object/Keys.js";
+import pick from "./object/Pick.js";
+import pickBy from "./object/PickBy.js";
+import fromPair from "./object/FromPair.js";
 import toPair from "./object/ToPair.js";
 import values from "./object/Values.js";
 
@@ -44,19 +44,29 @@ import uuid from "./other/Uuid.js";
 
 import DOM from "./DOM/DOM.js";
 
+import timeDifference from "./time/display/TimeDifference.js";
+import isBefore from "./time/display/IsBefore.js";
+import isAfter from "./time/display/IsAfter.js";
+import isSame from "./time/display/IsSame.js";
+import isLeapYear from "./time/display/IsLeapYear.js";
+
+import daysInMonth from "./time/get-set/DaysInMonth.js";
+import day from "./time/get-set/Day.js";
+
 var q = (function () {
   "use strict";
 
   // Create the methods object
   var methods = {};
 
+  //DOM
+  methods.DOM = (...args) => {
+    return DOM(...args);
+  };
+
   //Array
   methods.difference = (a, b) => {
     return difference(a, b);
-  };
-
-  methods.DOM = (...args) => {
-    return DOM(...args);
   };
 
   methods.chunk = (input, size) => {
@@ -215,6 +225,79 @@ var q = (function () {
 
   methods.uuid = () => {
     return uuid();
+  };
+
+  // time
+  methods.timeDifference = (firstDate, secondDate) => {
+    return timeDifference(firstDate, secondDate);
+  };
+
+  methods.isAfter = (firstDate, secondDate) => {
+    return isAfter(firstDate, secondDate);
+  };
+
+  methods.isBefore = (firstDate, secondDate) => {
+    return isBefore(firstDate, secondDate);
+  };
+
+  methods.isSame = (firstDate, secondDate) => {
+    return isSame(firstDate, secondDate);
+  };
+
+  methods.isLeapYear = (year) => {
+    return isLeapYear(year);
+  };
+
+  methods.day = (from, date) => {
+    return day(from, date);
+  };
+
+  methods.hour = () => {
+    return hour();
+  };
+
+  methods.maxDate = (array) => {
+    return maxDate(array);
+  };
+
+  methods.milliseconds = () => {
+    return milliseconds();
+  };
+
+  methods.minDate = (array) => {
+    return minDate(array);
+  };
+
+  methods.minutes = () => {
+    return minutes();
+  };
+
+  methods.seconds = () => {
+    return seconds();
+  };
+
+  methods.setDay = (d) => {
+    return setDay(d);
+  };
+
+  methods.setHours = (h) => {
+    return setHours(h);
+  };
+
+  methods.setMilliseconds = (ms) => {
+    return setMilliseconds(ms);
+  };
+
+  methods.setMinutes = (m) => {
+    return setMinutes(m);
+  };
+
+  methods.setSeconds = (s) => {
+    return setSeconds(s);
+  };
+
+  methods.week = (d, type) => {
+    return week(d, type);
   };
 
   // Expose the public methods

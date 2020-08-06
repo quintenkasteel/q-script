@@ -24,13 +24,14 @@ import {
   size,
   sortBy,
   unique,
-} from "./Array.js";
-import { isFunction, isEmpty } from "./Types.js";
-import { has, get, keys, pick, pickBy, fromPair, toPair, values} from "./Object.js";
-import {inRange, randomInt} from "./Utils.js"
+} from "./utils/Array.js";
+import { isFunction, isEmpty } from "./utils/Types.js";
+import { has, get, keys, pick, pickBy, fromPair, toPair, values} from "./utils/Object.js";
+import {inRange, randomInt} from "./utils/Utils.js"
+import DOM from "./DOM/DOM.js";
 
 
-var _ = (function () {
+var q = (function () {
   "use strict";
 
   // Create the methods object
@@ -39,6 +40,10 @@ var _ = (function () {
   //Array
   methods.difference = (a, b) => {
     return difference(a, b);
+  };
+
+  methods.DOM = (...args) => {
+    return DOM(...args);
   };
 
   methods.chunk = (input, size) => {
@@ -194,4 +199,4 @@ var _ = (function () {
   return methods;
 })();
 
-export default _;
+export default q;

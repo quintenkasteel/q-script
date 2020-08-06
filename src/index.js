@@ -37,12 +37,12 @@ import {
   values,
 } from "./utils/Object.js";
 import { inRange, randomInt } from "./utils/Utils.js";
-import _ from "./utils/Underscore.js";
-import q from "./Q.js";
-import { css } from "./Style.js";
-export default _;
+import q from "./Qutil.js";
+import DOM from "./DOM/DOM.js";
+import { css } from "./DOM/Style.js";
+export default q;
 export {
-  q,
+  DOM,
   css,
   difference,
   chunk,

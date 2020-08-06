@@ -1,11 +1,11 @@
 const path = require('path');
 const webpack = require('webpack');
-
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ROOT = path.resolve( __dirname, 'src' );
 const DESTINATION = path.resolve( __dirname, 'dist' );
 
 module.exports = {
-  target: "es5",  
+  target: "web",  
   context: ROOT,
     entry: {
         'main': './index.js'
@@ -35,7 +35,11 @@ module.exports = {
             }
         ]
     },
-
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, "src", "index.html")
+      })
+    ],
     devtool: 'cheap-module-source-map',
     devServer: {
       contentBase: path.resolve(__dirname, 'dist'),

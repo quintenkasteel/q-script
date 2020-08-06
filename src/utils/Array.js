@@ -1,21 +1,3 @@
-export const chunk = (input, size) => {
-  return input.reduce((arr, item, idx) => {
-    return idx % size === 0
-      ? [...arr, [item]]
-      : [...arr.slice(0, -1), [...arr.slice(-1)[0], item]];
-  }, []);
-};
-
-export const compact = (arr) => {
-  return arr.filter(Boolean);
-};
-
-export const difference = (a, b) => {
-  var arrs = [a, b];
-  var newarrs = arrs.reduce((a, b) => a.filter((c) => !b.includes(c)));
-  return newarrs;
-};
-
 export const drop = (arr, i = 1) => {
   return arr.slice(i);
 };

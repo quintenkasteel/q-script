@@ -164,3 +164,25 @@ console.log("isAfter", q.isAfter("2020-05-02", "2019-05-02"));
 console.log("isSame", q.isSame("2020-05-02", "2019-05-02"));
 console.log("isLeapYear", q.isLeapYear("2020"));
 console.log("day", q.day());
+console.log("daysInMonth", q.daysInMonth("2020", "2"));
+console.log("hour", q.hour());
+const array = [
+  new Date(2017, 4, 13),
+  new Date(2018, 2, 12),
+  new Date(2016, 0, 10),
+  new Date(2016, 0, 9),
+];
+console.log("maxDate", q.maxDate(array));
+console.log("minDate", q.minDate(array));
+console.log("minutes", q.minutes());
+console.log("seconds", q.seconds());
+console.log("setDay", q.setDay(8));
+console.log("setHours", q.setHours(8));
+console.log("setMilliseconds", q.setMilliseconds(1));
+console.log("setMinutes", q.setMinutes(1));
+console.log("setSeconds", q.setSeconds(1));
+console.log("week", q.week(new Date()));
+console.log("addTime", q.addTime(7));
+console.log("subtractTime", q.subtractTime(7));
+console.log("stringDateFormat", q.stringDateFormat());
+console.log("stringTimeFormat", q.stringTimeFormat());

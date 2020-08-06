@@ -1,6 +1,5 @@
 const add = (day) => {
-  const now = new Date();
-  return now.setDate(now.getDate() + day);
+  return new Date(new Date().getTime() + 1000 * 60 * 60 * 24 * day);
 };
 
-export default add
+export default add;

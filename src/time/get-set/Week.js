@@ -10,7 +10,7 @@ const week = (d, type = "year") => {
     // Calculate full weeks to nearest Thursday
     var weekNo = Math.ceil(((d - yearStart) / 86400000 + 1) / 7);
     // Return array of year and week number
-    return [d.getUTCFullYear(), weekNo];
+    return weekNo;
   } else if (type === "month") {
   }
 };

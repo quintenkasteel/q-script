@@ -1,5 +1,5 @@
 const inRange = (num, a, b = 0) => {
-  Math.min(a, b) <= num && num < Math.max(a, b);
+  return Math.min(a, b) <= num && num < Math.max(a, b);
 }
 
 export default inRange

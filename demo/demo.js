@@ -139,8 +139,6 @@ const styled = `
   position: relative;
 `;
 
-console.log(q.DOM("h1").addClass("no"));
-
 q.DOM(() => {
   q.DOM("h1").css`color: red;`;
   q.DOM("h1").addClass("yes");

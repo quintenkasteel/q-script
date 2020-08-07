@@ -51,18 +51,7 @@ module.exports = {
     isEmpty: "./src/types/IsEmpty.js",
     isFunction: "./src/types/IsFunction.js",
     isString: "./src/types/IsString.js",
-    has: "./src/object/Has.js",
-    get: "./src/object/Get.js",
-    keys: "./src/object/Keys.js",
-    pick: "./src/object/Pick.js",
-    pickBy: "./src/object/PickBy.js",
-    fromPair: "./src/object/FromPair.js",
-    toPair: "./src/object/ToPair.js",
-    values: "./src/object/Values.js",
-    inRange: "./src/numbers/InRange.js",
-    randomInt: "./src/numbers/RandomInt.js",
     uuid: "./src/other/Uuid.js",
-    DOM: "./src/DOM/DOM.js",
     timeDifference: "./src/time/display/TimeDifference.js",
     isBefore: "./src/time/display/IsBefore.js",
     isAfter: "./src/time/display/IsAfter.js",
@@ -91,9 +80,9 @@ module.exports = {
     filename: "[name].js",
     path: path.resolve(__dirname, "dist"),
     library: "@quintenkasteel/q-script",
-    globalObject: "this",
+    globalObject: `(typeof self !== 'undefined' ? self : this)`,
     umdNamedDefine: true,
-    libraryTarget: "commonjs2",
+    libraryTarget: "umd",
   },
   resolve: {
     extensions: [".ts", ".js"],
@@ -105,14 +94,14 @@ module.exports = {
   },
   module: {
     rules: [
-      // {
-      //   test: /\.js?$/,
-      //   exclude: /(node_modules)/,
-      //   use: 'babel-loader',
-      //   options: [
-      //     "sourceType": "module",
-      //   ]
-      // },
+      {
+        test: /\.js?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/env'] 
+        }
+      },
       {
         test: /\.ts$/,
         exclude: [/node_modules/],
@@ -123,7 +112,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: path.resolve(__dirname, "src", "index.html"),
     }),
   ],

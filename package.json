@@ -7,16 +7,15 @@
   "license": "ISC",
   "scripts": {
     "coverage": "jest --coverage",
-    "build": "webpack --config webpack.config.js --mode production",
     "build.prod": "webpack --config webpack.config.js -p",
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "build.esnext": "npm run build:types && npm run build:js",
     "build.all": "npm run build.prod && npm run build.esnext",
     "test": "karma start karma.config.js",
-    "dev": "webpack --config webpack.config.js",
-    "webpack": "webpack",
-    "start": "webpack-dev-server --mode development --open"
+    "build": "webpack --config webpack.config.js",
+    "start": "live-server --open=demo",
+    "dev": "webpack-dev-server --mode development --open"
   },
   "repository": "https://github.com/quintenkasteel/q-script",
   "keywords": [],
@@ -31,7 +30,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.4.0",
+    "@babel/core": "^7.11.1",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.0",
     "@babel/preset-env": "^7.4.1",
@@ -49,11 +48,12 @@
     "karma-jasmine": "1.1.2",
     "karma-phantomjs-launcher": "1.0.4",
     "karma-webpack": "3.0.0",
+    "live-server": "^1.2.1",
     "source-map-loader": "0.2.3",
     "tslint": "5.17.0",
     "tslint-loader": "3.6.0",
     "typescript": "^3.9.7",
-    "webpack": "4.12.0",
+    "webpack": "^4.4.1",
     "webpack-cli": "3.0.8",
     "webpack-dev-server": "3.1.11"
   }

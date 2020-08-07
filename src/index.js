@@ -71,7 +71,7 @@ import subtractTime from "./time/manipulate/Subtract.js";
 import stringDateFormat from "./time/parse/StringDateFormat.js";
 import stringTimeFormat from "./time/parse/StringTimeFormat.js";
 
-var q = (function () {
+const q = (function () {
   "use strict";
 
   // Create the methods object

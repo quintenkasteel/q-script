@@ -3,16 +3,17 @@
   "version": "0.1.15",
   "description": "utility functions",
   "type": "module",
-  "main": "dist/index.js",
+  "main": "es/index.js",
   "exports": {
     ".": {
       "import": "./es/index.js",
       "require": "./dist/index.js",
-      "default": "./es/index.js"
+      "default": "./dist/index.js"
     }
   },
   "author": "Quinten Kasteel",
   "license": "ISC",
+  "files": ["dist", "es"],
   "scripts": {
     "coverage": "jest --coverage",
     "build.prod": "webpack --config webpack.config.js -p",

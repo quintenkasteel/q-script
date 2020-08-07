@@ -3,12 +3,12 @@
   "version": "0.1.14",
   "description": "utility functions",
   "type": "module",
-  "main": "./es/index.js",
+  "main": "dist/index.js",
   "exports": {
     ".": {
       "import": "./es/index.js",
-      "default": "./dist/index.js",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "default": "./es/index.js"
     }
   },
   "author": "Quinten Kasteel",

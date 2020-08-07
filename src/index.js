@@ -1,56 +1,83 @@
-import drop from "./array/Drop.js";
-import dropEnd from "./array/DropEnd.js";
-import fill from "./array/Fill.js";
-import findFirst from "./array/FindFirst.js";
-import findFirstIndex from "./array/FindFirstIndex.js";
-import flatten from "./array/Flatten.js";
-import flattenDeep from "./array/FlattenDeep.js";
-import head from "./array/Head.js";
-import tail from "./array/Tail.js";
-import intersect from "./array/Intersect.js";
-import takeEnd from "./array/TakeEnd.js";
-import lastIndexOf from "./array/LastIndexOf.js";
-import groupBy from "./array/GroupBy.js";
-import includes from "./array/Includes.js";
-import keyBy from "./array/KeyBy.js";
-import minBy from "./array/MinBy.js";
-import maxBy from "./array/MaxBy.js";
-import pluck from "./array/Pluck.js";
-import sample from "./array/Sample.js";
-import size from "./array/Size.js";
-import sortBy from "./array/SortBy.js";
-import unique from "./array/Unique.js";
-import chunk from "./array/Chunk.js";
-import compact from "./array/Compact.js";
-import difference from "./array/Difference.js";
+import {
+  unique,
+  difference,
+  chunk,
+  compact,
+  sortBy,
+  keyBy,
+  includes,
+  size,
+  sample,
+  pluck,
+  maxBy,
+  minBy,
+  groupBy,
+  lastIndexOf,
+  takeEnd,
+  intersect,
+  tail,
+  head,
+  flattenDeep,
+  flatten,
+  findFirstIndex,
+  findFirst,
+  fill,
+  dropEnd,
+  drop,
+} from "./array/Array.js";
 
-import isFunction from "./types/IsFunction.js";
-import isEmpty from "./types/IsEmpty.js";
-import isString from "./types/IsString.js";
+import {
+  has,
+  get,
+  keys,
+  pick,
+  pickBy,
+  fromPair,
+  toPair,
+  values,
+} from "./object/Object.js";
 
-import  has from "./object/Has.js";
-import  get from "./object/Get.js";
-import  keys from "./object/Keys.js";
-import  pick from "./object/Pick.js";
-import  pickBy from "./object/PickBy.js";
-import  fromPair from "./object/FromPair.js";
-import toPair from "./object/ToPair.js";
-import values from "./object/Values.js";
-
-import inRange from "./numbers/InRange.js";
-import randomInt from "./numbers/RandomInt.js";
-
+import {
+  timeDifference,
+  isBefore,
+  isAfter,
+  isSame,
+  isLeapYear,
+  daysInMonth,
+  day,
+  hour,
+  maxDate,
+  milliseconds,
+  minDate,
+  minutes,
+  seconds,
+  setDay,
+  setHours,
+  setMilliseconds,
+  setMinutes,
+  setSeconds,
+  week,
+  addTime,
+  subtractTime,
+  stringDateFormat,
+  stringTimeFormat,
+} from "./time/Time.js";
+import { inRange, randomInt } from "./numbers/Numbers.js";
+import { isFunction, isEmpty, isString } from "./types/Types.js";
 import uuid from "./other/Uuid.js";
-
 import DOM from "./DOM/DOM.js";
 
-var q = (function () {
+const q = (function () {
   "use strict";
 
   // Create the methods object
   var methods = {};
 
-  //Array
+  //DOM
+  methods.DOM = (...args) => {
+    return DOM(...args);
+  };
+
   methods.difference = (a, b) => {
     return difference(a, b);
   };

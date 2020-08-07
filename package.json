@@ -3,8 +3,7 @@
   "version": "0.1.13",
   "description": "utility functions",
   "type": "module",
-  "main": "es/index.js",
-  "module": "es/index.js",
+  "main": "./es/index.js",
   "exports": {
     ".": {
       "import": "./es/index.js",

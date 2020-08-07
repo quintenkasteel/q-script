@@ -1,6 +1,6 @@
 {
   "name": "@quintenkasteel/q-script",
-  "version": "0.1.15",
+  "version": "0.2.0",
   "description": "utility functions",
   "type": "module",
   "main": "es/index.js",
@@ -13,7 +13,10 @@
   },
   "author": "Quinten Kasteel",
   "license": "ISC",
-  "files": ["dist", "es"],
+  "files": [
+    "dist",
+    "es"
+  ],
   "scripts": {
     "coverage": "jest --coverage",
     "build.prod": "webpack --config webpack.config.js -p",

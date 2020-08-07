@@ -8,7 +8,7 @@ import daysInMonth from "./get-set/DaysInMonth.js";
 import day from "./get-set/Day.js";
 import hour from "./get-set/Hours.js";
 import maxDate from "./get-set/MaxDate.js";
-import milliseconds from "./get-set/MilliSeconds.js";
+import milliseconds from "./get-set/Milliseconds.js";
 import minDate from "./get-set/MinDate.js";
 import minutes from "./get-set/Minutes.js";
 import seconds from "./get-set/Seconds.js";

@@ -1,6 +1,6 @@
 {
   "name": "@quintenkasteel/q-script",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "utility functions",
   "type": "module",
   "main": "dist/index.js",

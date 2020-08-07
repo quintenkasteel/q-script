@@ -4,6 +4,7 @@
   "description": "utility functions",
   "type": "module",
   "main": "dist/index.js",
+  "module": "es/index.js",
   "exports": {
     ".": {
       "require": "./dist/index.js",

@@ -2,16 +2,17 @@
   "name": "@quintenkasteel/q-script",
   "version": "0.1.10",
   "description": "utility functions",
-  "type": "module",
+  
   "main": "dist/index.js",
   "module": "es/index.js",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "default": "./es/index.js"
+      "import": "./es/index.js",
+      "default": "./dist/index.js",
+      "require": "./dist/index.js"
     }
   },
-  "modules": "es/index.js",
+  "type": "module",
   "author": "Quinten Kasteel",
   "license": "ISC",
   "scripts": {

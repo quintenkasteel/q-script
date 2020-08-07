@@ -2,7 +2,15 @@
   "name": "@quintenkasteel/q-script",
   "version": "0.1.8",
   "description": "utility functions",
+  "type": "module",
   "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "default": "./es/index.js"
+    }
+  },
+  "modules": "es/index.js",
   "author": "Quinten Kasteel",
   "license": "ISC",
   "scripts": {
@@ -11,16 +19,17 @@
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "build.esnext": "npm run build:types && npm run build:js",
-    "build.all": "npm run build.prod && npm run build.esnext",
     "test": "karma start karma.config.js",
     "build": "webpack --config webpack.config.js",
     "start": "live-server --open=demo",
-    "dev": "webpack-dev-server --mode development --open"
+    "dev": "webpack-dev-server --mode development --open",
+    "build-es": "babel src --out-dir es",
+    "build.all": "npm run build && npm run build-es"
   },
   "repository": "https://github.com/quintenkasteel/q-script",
   "keywords": [],
   "engines": {
-    "node": ">=4.3.2"
+    "node": ">=9.11.2"
   },
   "jest": {
     "moduleNameMapper": {
@@ -44,10 +53,6 @@
     "html-webpack-plugin": "^4.3.0",
     "jasmine-core": "3.1.0",
     "jest": "^24.9.0",
-    "karma": "2.0.4",
-    "karma-jasmine": "1.1.2",
-    "karma-phantomjs-launcher": "1.0.4",
-    "karma-webpack": "3.0.0",
     "live-server": "^1.2.1",
     "source-map-loader": "0.2.3",
     "tslint": "5.17.0",

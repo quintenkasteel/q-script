@@ -1,75 +1,71 @@
-import drop from "./array/Drop.js";
-import dropEnd from "./array/DropEnd.js";
-import fill from "./array/Fill.js";
-import findFirst from "./array/FindFirst.js";
-import findFirstIndex from "./array/FindFirstIndex.js";
-import flatten from "./array/Flatten.js";
-import flattenDeep from "./array/FlattenDeep.js";
-import head from "./array/Head.js";
-import tail from "./array/Tail.js";
-import intersect from "./array/Intersect.js";
-import takeEnd from "./array/TakeEnd.js";
-import lastIndexOf from "./array/LastIndexOf.js";
-import groupBy from "./array/GroupBy.js";
-import includes from "./array/Includes.js";
-import keyBy from "./array/KeyBy.js";
-import minBy from "./array/MinBy.js";
-import maxBy from "./array/MaxBy.js";
-import pluck from "./array/Pluck.js";
-import sample from "./array/Sample.js";
-import size from "./array/Size.js";
-import sortBy from "./array/SortBy.js";
-import unique from "./array/Unique.js";
-import chunk from "./array/Chunk.js";
-import compact from "./array/Compact.js";
-import difference from "./array/Difference.js";
+import {
+  unique,
+  difference,
+  chunk,
+  compact,
+  sortBy,
+  keyBy,
+  includes,
+  size,
+  sample,
+  pluck,
+  maxBy,
+  minBy,
+  groupBy,
+  lastIndexOf,
+  takeEnd,
+  intersect,
+  tail,
+  head,
+  flattenDeep,
+  flatten,
+  findFirstIndex,
+  findFirst,
+  fill,
+  dropEnd,
+  drop,
+} from "./array/Array.js";
 
-import isFunction from "./types/IsFunction.js";
-import isEmpty from "./types/IsEmpty.js";
-import isString from "./types/IsString.js";
+import {
+  has,
+  get,
+  keys,
+  pick,
+  pickBy,
+  fromPair,
+  toPair,
+  values,
+} from "./object/Object.js";
 
-import has from "./object/Has.js";
-import get from "./object/Get.js";
-import keys from "./object/Keys.js";
-import pick from "./object/Pick.js";
-import pickBy from "./object/PickBy.js";
-import fromPair from "./object/FromPair.js";
-import toPair from "./object/ToPair.js";
-import values from "./object/Values.js";
-
-import inRange from "./numbers/InRange.js";
-import randomInt from "./numbers/RandomInt.js";
-
+import {
+  timeDifference,
+  isBefore,
+  isAfter,
+  isSame,
+  isLeapYear,
+  daysInMonth,
+  day,
+  hour,
+  maxDate,
+  milliseconds,
+  minDate,
+  minutes,
+  seconds,
+  setDay,
+  setHours,
+  setMilliseconds,
+  setMinutes,
+  setSeconds,
+  week,
+  addTime,
+  subtractTime,
+  stringDateFormat,
+  stringTimeFormat,
+} from "./time/Time.js";
+import { inRange, randomInt } from "./numbers/Numbers.js";
+import { isFunction, isEmpty, isString } from "./types/Types.js";
 import uuid from "./other/Uuid.js";
-
 import DOM from "./DOM/DOM.js";
-
-import timeDifference from "./time/display/TimeDifference.js";
-import isBefore from "./time/display/IsBefore.js";
-import isAfter from "./time/display/IsAfter.js";
-import isSame from "./time/display/IsSame.js";
-import isLeapYear from "./time/display/IsLeapYear.js";
-
-import daysInMonth from "./time/get-set/DaysInMonth.js";
-import day from "./time/get-set/Day.js";
-import hour from "./time/get-set/Hours.js";
-import maxDate from "./time/get-set/MaxDate.js";
-import milliseconds from "./time/get-set/MilliSeconds.js";
-import minDate from "./time/get-set/MinDate.js";
-import minutes from "./time/get-set/Minutes.js";
-import seconds from "./time/get-set/Seconds.js";
-import setDay from "./time/get-set/SetDay.js";
-import setHours from "./time/get-set/SetHours.js";
-import setMilliseconds from "./time/get-set/SetMilliseconds.js";
-import setMinutes from "./time/get-set/SetMinutes.js";
-import setSeconds from "./time/get-set/SetSeconds.js";
-import week from "./time/get-set/Week.js";
-
-import addTime from "./time/manipulate/Add.js";
-import subtractTime from "./time/manipulate/Subtract.js";
-
-import stringDateFormat from "./time/parse/StringDateFormat.js";
-import stringTimeFormat from "./time/parse/StringTimeFormat.js";
 
 const q = (function () {
   "use strict";
@@ -82,7 +78,6 @@ const q = (function () {
     return DOM(...args);
   };
 
-  //Array
   methods.difference = (a, b) => {
     return difference(a, b);
   };
